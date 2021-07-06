@@ -1,0 +1,14 @@
+version: "3.1"
+
+services:
+  lobo-liquibase:
+    container_name: lobo-liquibase
+    image: liquibase/liquibase
+    command: --url=jdbc:postgresql://lobo-db:5432/postgres?user=postgres&password=postgres --changeLogFile=changelog.xml update
+    volumes:
+      - ./config/changelog.xml:/liquibase/changelog.xml
+      - ./scripts:/liquibase/scripts
+    networks:
+      - lobo-net
+networks:
+  lobo-net:    
