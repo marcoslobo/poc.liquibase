@@ -6,7 +6,7 @@ Proof of concept for liquibase migrations
 Docker-compose -f docker-compose.database.yml up
 ```
 
-2- Run docker compose for the database
+2- Run docker compose for the Liquibase migration
 ```bash
 Docker-compose -f docker-compose.liquibase.yml up
 ```
